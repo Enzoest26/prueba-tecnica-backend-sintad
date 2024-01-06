@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tecnica.prueba.commons.RestControllerAbstract;
 import com.tecnica.prueba.commons.service.IBaseService;
 import com.tecnica.prueba.model.TipoDocumento;
+import com.tecnica.prueba.model.dto.TipoDocumentoDto;
 import com.tecnica.prueba.model.request.TipoDocumentoRequest;
 import com.tecnica.prueba.service.ITipoDocumentoService;
 
@@ -23,7 +24,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/api/tipos-documentos")
-public class TipoDocumentoRestController extends RestControllerAbstract<TipoDocumento, ITipoDocumentoService, TipoDocumentoRequest>
+public class TipoDocumentoRestController extends RestControllerAbstract<TipoDocumento, ITipoDocumentoService, TipoDocumentoDto>
 {
 	public TipoDocumentoRestController(ITipoDocumentoService service) {
 		super(service);
