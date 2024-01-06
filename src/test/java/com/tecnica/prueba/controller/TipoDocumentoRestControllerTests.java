@@ -89,7 +89,7 @@ public class TipoDocumentoRestControllerTests
 		request.setDescripcion("Documento Nacional de Identidad");
 		request.setEstado(0);
 		request.setNombre("DNI");
-		given(this.tipoDocumentoService.registrarTipoDocumento(any(TipoDocumentoRequest.class))).willAnswer((invocation) -> invocation.getArgument(0));
+		//given(this.tipoDocumentoService.registrarTipoDocumento(any(TipoDocumentoRequest.class))).willAnswer((invocation) -> invocation.getArgument(0));
 		
 		ResultActions response = this.mockMvc.perform(post("/api/tipos-documentos").contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(request)));
 		

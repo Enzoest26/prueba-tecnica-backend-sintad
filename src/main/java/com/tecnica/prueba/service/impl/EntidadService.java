@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.tecnica.prueba.commons.ServiceAbstract;
 import com.tecnica.prueba.exception.ItemNoEncontradoException;
 import com.tecnica.prueba.model.Entidad;
 import com.tecnica.prueba.model.request.EntidadRequest;
@@ -24,7 +25,7 @@ public class EntidadService implements IEntidadService
 	private ITipoContribuyenteService tipoContribuyenteService;
 	
 	private ITipoDocumentoService tipoDocumentoService;
-	
+	/*
 	@Override
 	public List<Entidad> listarTodos() 
 	{
@@ -40,8 +41,8 @@ public class EntidadService implements IEntidadService
 		entidad.setNombreComercial(request.getNombreComercial());
 		entidad.setNroDocumento(request.getNroDocumento());
 		entidad.setDireccion(request.getDireccion());
-		entidad.setObjTipoContribuyente(this.tipoContribuyenteService.buscarPorId(request.getIdTipoContribuyente()).orElse(null));
-		entidad.setObjTipoDocumento(this.tipoDocumentoService.buscarPorId(request.getIdTipoDocumento()).orElseThrow(() -> new ItemNoEncontradoException("Tipo Documento no existente")));
+		//entidad.setObjTipoContribuyente(this.tipoContribuyenteService.buscarPorId(request.getIdTipoContribuyente()).orElse(null));
+		//entidad.setObjTipoDocumento(this.tipoDocumentoService.buscarPorId(request.getIdTipoDocumento()).orElseThrow(() -> new ItemNoEncontradoException("Tipo Documento no existente")));
 		entidad.setRazonSocial(request.getRazonSocial());
 		entidad.setTelefono(request.getTelefono());
 		return this.entidadRepository.save(entidad);
@@ -75,5 +76,35 @@ public class EntidadService implements IEntidadService
 	{
 		return this.entidadRepository.findById(id);
 	}
+*/
 
+	@Override
+	public List<Entidad> listarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Entidad registrarEntidad(EntidadRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Entidad> actualizarEntidad(Long id, EntidadRequest request) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public void eliminarEntidad(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Optional<Entidad> buscarPorId(Long id) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
 }

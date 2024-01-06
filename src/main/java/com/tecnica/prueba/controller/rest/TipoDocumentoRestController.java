@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tecnica.prueba.commons.RestControllerAbstract;
+import com.tecnica.prueba.commons.service.IBaseService;
 import com.tecnica.prueba.model.TipoDocumento;
 import com.tecnica.prueba.model.request.TipoDocumentoRequest;
 import com.tecnica.prueba.service.ITipoDocumentoService;
@@ -20,19 +22,14 @@ import com.tecnica.prueba.service.ITipoDocumentoService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@AllArgsConstructor
 @RequestMapping("/api/tipos-documentos")
-public class TipoDocumentoRestController 
+public class TipoDocumentoRestController extends RestControllerAbstract<TipoDocumento, ITipoDocumentoService, TipoDocumentoRequest>
 {
-	private ITipoDocumentoService tipoDocumentoService;
-	
-	@GetMapping
-	public ResponseEntity<List<TipoDocumento>> listarTodos()
-	{
-		List<TipoDocumento> lstTipoDocumento = this.tipoDocumentoService.listarTodos();	
-		return new ResponseEntity<List<TipoDocumento>>(lstTipoDocumento, HttpStatus.OK);
+	public TipoDocumentoRestController(ITipoDocumentoService service) {
+		super(service);
 	}
 	
+	/*
 	@GetMapping("/{id}")
 	public ResponseEntity<TipoDocumento> buscarPorId(@PathVariable Long id)
 	{
@@ -57,5 +54,5 @@ public class TipoDocumentoRestController
 		this.tipoDocumentoService.eliminarTipoDocumento(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
-	
+	*/
 }
